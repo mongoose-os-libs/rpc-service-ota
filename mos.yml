@@ -5,6 +5,8 @@ version: 1.0
 skeleton_version: 2017-05-18
 sources:
   - src
+libs:
+  - origin: https://github.com/mongoose-os-libs/rpc-common
 tags:
   - rpc
   - updater

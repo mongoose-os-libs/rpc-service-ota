@@ -15,11 +15,9 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#if MGOS_ENABLE_RPC
 bool mgos_updater_rpc_init(void);
 void mgos_updater_rpc_finish(int error_code, int64_t id,
                              const struct mg_str src);
-#endif
 
 #ifdef __cplusplus
 }

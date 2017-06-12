@@ -4,18 +4,16 @@
  */
 
 #include "mgos_updater_rpc.h"
+#include "mg_rpc.h"
+#include "mgos_rpc.h"
 
 #include "common/cs_dbg.h"
-#include "common/mg_rpc/mg_rpc.h"
 #include "common/mg_str.h"
 #include "fw/src/mgos_console.h"
 #include "fw/src/mgos_mongoose.h"
-#include "fw/src/mgos_rpc.h"
 #include "fw/src/mgos_updater_common.h"
 #include "fw/src/mgos_updater_http.h"
 #include "fw/src/mgos_utils.h"
-
-#if MGOS_ENABLE_RPC
 
 static struct mg_rpc_request_info *s_update_req;
 
@@ -216,5 +214,3 @@ bool mgos_updater_rpc_init(void) {
                      handle_set_boot_state_req, NULL);
   return true;
 }
-
-#endif /* MGOS_ENABLE_RPC */
