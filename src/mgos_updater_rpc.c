@@ -196,7 +196,7 @@ static void handle_set_boot_state_req(struct mg_rpc_request_info *ri,
   (void) fi;
 }
 
-bool mgos_updater_rpc_init(void) {
+bool mgos_rpc_service_ota_init(void) {
   struct mg_rpc *mg_rpc = mgos_rpc_get_global();
   if (mg_rpc == NULL) return false;
   mg_rpc_add_handler(mg_rpc, "OTA.Update", "{url: %T, commit_timeout: %d}",

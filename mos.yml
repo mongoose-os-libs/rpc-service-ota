@@ -1,5 +1,5 @@
 author: mongoose-os
-description: Support for Updater via RPC
+description: Support for Over-The-Air update via RPC
 type: lib
 version: 1.0
 skeleton_version: 2017-05-18
@@ -8,6 +8,7 @@ sources:
 libs:
   - origin: https://github.com/mongoose-os-libs/rpc-common
 tags:
+  - c
+  - ota
   - rpc
   - updater
-  - c
