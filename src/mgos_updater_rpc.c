@@ -4,14 +4,15 @@
  */
 
 #include "mgos_updater_rpc.h"
+
 #include "mg_rpc.h"
 #include "mgos_rpc.h"
+#include "mgos_ota_http_client.h"
 
 #include "common/cs_dbg.h"
 #include "common/mg_str.h"
 #include "fw/src/mgos_mongoose.h"
 #include "fw/src/mgos_updater_common.h"
-#include "fw/src/mgos_updater_http.h"
 #include "fw/src/mgos_utils.h"
 
 static struct mg_rpc_request_info *s_update_req;
@@ -67,7 +68,7 @@ static void handle_update_req(struct mg_rpc_request_info *ri, void *cb_arg,
   ctx->result_cb = mg_rpc_updater_result;
   s_update_req = ri;
 
-  mgos_updater_http_start(ctx, blob_url);
+  mgos_ota_http_start(ctx, blob_url);
   free(blob_url);
   return;
 
