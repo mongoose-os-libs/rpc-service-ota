@@ -9,7 +9,6 @@
 
 #include "common/cs_dbg.h"
 #include "common/mg_str.h"
-#include "fw/src/mgos_console.h"
 #include "fw/src/mgos_mongoose.h"
 #include "fw/src/mgos_updater_common.h"
 #include "fw/src/mgos_updater_http.h"
@@ -53,7 +52,7 @@ static void handle_update_req(struct mg_rpc_request_info *ri, void *cb_arg,
 
   blob_url = calloc(1, url_tok.len + 1);
   if (blob_url == NULL) {
-    CONSOLE_LOG(LL_ERROR, ("Out of memory"));
+    LOG(LL_ERROR, ("Out of memory"));
     return;
   }
 
@@ -74,7 +73,7 @@ static void handle_update_req(struct mg_rpc_request_info *ri, void *cb_arg,
 
 clean:
   if (blob_url != NULL) free(blob_url);
-  CONSOLE_LOG(LL_ERROR, ("Failed to start update: %s", reply));
+  LOG(LL_ERROR, ("Failed to start update: %s", reply));
   mg_rpc_send_errorf(ri, -1, reply);
   ri = NULL;
   (void) cb_arg;
