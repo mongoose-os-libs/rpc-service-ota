@@ -3,7 +3,7 @@
  * All rights reserved
  */
 
-#include "mgos_updater_rpc.h"
+#include "mgos_rpc_service_ota.h"
 
 #include "mg_rpc.h"
 #include "mgos_rpc.h"
