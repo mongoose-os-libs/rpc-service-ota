@@ -5,6 +5,9 @@ It is possible to call this service programmatically via serial, HTTP/RESTful,
 Websocket, MQTT or other transports
 (see [RPC section](/docs/core_components/rpc.html)) or via the `mos` tool.
 
+See in-depth description of our OTA mechanism at
+[Updating firmware reliably - embedded.com](http://www.embedded.com/design/prototyping-and-development/4443082/Updating-firmware-reliably).
+
 See OTA video tutorial:
 
 <iframe width="560" src="https://www.youtube.com/embed/o05sBDfaFO8"
