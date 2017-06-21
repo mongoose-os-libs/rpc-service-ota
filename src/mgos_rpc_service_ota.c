@@ -84,7 +84,11 @@ clean:
 static void handle_commit_req(struct mg_rpc_request_info *ri, void *cb_arg,
                               struct mg_rpc_frame_info *fi,
                               struct mg_str args) {
-  mg_rpc_send_errorf(ri, mgos_upd_commit() ? 0 : -1, NULL);
+  if (mgos_upd_commit()) {
+    mg_rpc_send_responsef(ri, NULL);
+  } else {
+    mg_rpc_send_errorf(ri, -1, NULL);
+  }
   ri = NULL;
   (void) cb_arg;
   (void) fi;
@@ -94,10 +98,13 @@ static void handle_commit_req(struct mg_rpc_request_info *ri, void *cb_arg,
 static void handle_revert_req(struct mg_rpc_request_info *ri, void *cb_arg,
                               struct mg_rpc_frame_info *fi,
                               struct mg_str args) {
-  bool ok = mgos_upd_revert(false /* reboot */);
-  mg_rpc_send_errorf(ri, ok ? 0 : -1, NULL);
+  if (mgos_upd_revert(false /* reboot */)) {
+    mg_rpc_send_responsef(ri, NULL);
+    mgos_system_restart_after(100);
+  } else {
+    mg_rpc_send_errorf(ri, -1, NULL);
+  }
   ri = NULL;
-  if (ok) mgos_system_restart_after(100);
   (void) cb_arg;
   (void) fi;
   (void) args;
@@ -191,7 +198,11 @@ static void handle_set_boot_state_req(struct mg_rpc_request_info *ri,
   } else {
     ret = -1;
   }
-  mg_rpc_send_errorf(ri, ret, NULL);
+  if (ret == 0) {
+    mg_rpc_send_responsef(ri, NULL);
+  } else {
+    mg_rpc_send_errorf(ri, ret, NULL);
+  }
   (void) cb_arg;
   (void) fi;
 }
