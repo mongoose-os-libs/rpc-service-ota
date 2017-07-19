@@ -9,7 +9,7 @@
 #include <inttypes.h>
 #include <stdbool.h>
 #include "common/mg_str.h"
-#include "fw/src/mgos_features.h"
+#include "mgos_features.h"
 
 #ifdef __cplusplus
 extern "C" {

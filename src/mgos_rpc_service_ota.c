@@ -11,9 +11,9 @@
 
 #include "common/cs_dbg.h"
 #include "common/mg_str.h"
-#include "fw/src/mgos_mongoose.h"
-#include "fw/src/mgos_updater_common.h"
-#include "fw/src/mgos_utils.h"
+#include "mgos_mongoose.h"
+#include "mgos_updater_common.h"
+#include "mgos_utils.h"
 
 static struct mg_rpc_request_info *s_update_req;
 
