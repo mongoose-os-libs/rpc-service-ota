@@ -2,7 +2,7 @@ author: mongoose-os
 description: Support for Over-The-Air update via RPC
 type: lib
 version: 1.0
-skeleton_version: 2017-05-18
+manifest_version: 2017-05-18
 sources:
   - src
 libs:
