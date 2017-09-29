@@ -5,6 +5,8 @@ version: 1.0
 manifest_version: 2017-05-18
 sources:
   - src
+includes:
+  - include
 libs:
   - origin: https://github.com/mongoose-os-libs/ota-http-client
   - origin: https://github.com/mongoose-os-libs/rpc-common
