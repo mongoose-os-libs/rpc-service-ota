@@ -3,7 +3,7 @@ description: Support for Over-The-Air update via RPC
 type: lib
 version: 1.0
 manifest_version: 2017-09-29
-sources_removed:
+sources:
   - src
 includes:
   - include
