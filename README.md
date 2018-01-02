@@ -17,7 +17,7 @@ Below is a list of exported RPC methods and arguments:
 
 ## OTA.Update
 Trigger OTA firmware update. Arguments:
-```json
+```javascript
 {
   "url": "https://foo.com/fw123.zip", // Required. URL to the new firmware.
   "commit_timeout": "300"             // Optional. Time frame in seconds to do
@@ -53,7 +53,7 @@ Example usage:
 
 ## OTA.CreateSnapshot
 Create new firmware patition with the copy of currently running firmware. Arguments:
-```json
+```javascript
 {
   // Optional. If true, then current firmware is uncommited, and needs to
   // be explicitly commited after the first reboot. Otherwise, it'll reboot
