@@ -20,9 +20,9 @@ Trigger OTA firmware update. Arguments:
 ```javascript
 {
   "url": "https://example.com/fw123.zip", // Required. URL to the new firmware.
-  "commit_timeout": "300"             // Optional. Time frame in seconds to do
-                                      // OTA.Commit after reboot. If commit is
-                                      // not done during the timeout, OTA rolls back.
+  "commit_timeout": "300"                 // Optional. Time frame in seconds to do
+                                          // OTA.Commit after reboot. If commit is
+                                          // not done during the timeout, OTA rolls back.
 }
 ```
 
