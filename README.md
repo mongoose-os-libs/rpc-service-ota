@@ -19,7 +19,7 @@ Below is a list of exported RPC methods and arguments:
 Trigger OTA firmware update. Arguments:
 ```javascript
 {
-  "url": "https://foo.com/fw123.zip", // Required. URL to the new firmware.
+  "url": "https://example.com/fw123.zip", // Required. URL to the new firmware.
   "commit_timeout": "300"             // Optional. Time frame in seconds to do
                                       // OTA.Commit after reboot. If commit is
                                       // not done during the timeout, OTA rolls back.
@@ -33,7 +33,7 @@ After reboot, a firmware partition could become committed by calling
 reboots back into the old firmware after the `commit_timeout` seconds.
 Example usage:
 
-<pre class="command-line language-bash" data-user="chris" data-host="localhost" data-output="2-100"><code>mos call OTA.Update '{"url": "http://1.2.3.4/fw.zip", "commit_timeout": 300}'</code></pre>
+<pre class="command-line language-bash" data-user="chris" data-host="localhost" data-output="2-100"><code>mos call OTA.Update '{"url": "http://192.0.2.4/fw.zip", "commit_timeout": 300}'</code></pre>
 
 
 ## OTA.Commit
