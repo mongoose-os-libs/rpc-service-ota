@@ -19,10 +19,10 @@ Below is a list of exported RPC methods and arguments:
 Trigger OTA firmware update. Arguments:
 ```javascript
 {
-  "url": "https://foo.com/fw123.zip", // Required. URL to the new firmware.
-  "commit_timeout": "300"             // Optional. Time frame in seconds to do
-                                      // OTA.Commit after reboot. If commit is
-                                      // not done during the timeout, OTA rolls back.
+  "url": "https://example.com/fw123.zip", // Required. URL to the new firmware.
+  "commit_timeout": "300"                 // Optional. Time frame in seconds to do
+                                          // OTA.Commit after reboot. If commit is
+                                          // not done during the timeout, OTA rolls back.
 }
 ```
 
